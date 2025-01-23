@@ -7,19 +7,19 @@ void cr_account();
 void curser(int x, int y);//adding cursor
 int home();
 
-void curser(int x, int y){
+/*void curser(int x, int y){
     COORD c;
     c.X=x;
     c.Y=y;
-    SetConsoleCursorPosition(getstdhandle(STD_OUTPUT_HANDLE),c);
+        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 }
-
+*/
 int home(){
     int choise;
     printf("WELCOME TO BANKING SOLUTION");
-    curser(18,5);
+    //curser(18,5);
     printf("__________________________________________");
-    curser(1,5);
+    //curser(1,5);
     printf("1.  create account.\n");
     printf("2.  already a user ? login. \n");
     printf("3.  main menue \n");
