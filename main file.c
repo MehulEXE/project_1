@@ -28,21 +28,30 @@ int home(){
 }
 int main(){
     int ch;
-    ch =home();
-    scanf("%d,",& ch);
-    
-    switch (ch)
-    {
-    case 1:cr_account();
-        break;
-    case 2:urlogin();
-        break;
-    case 3:home();
-    default:
-        break;
-    }
+    do {
+        ch = home();
+        switch (ch) {
+            case 1:
+                cr_account();
+                break;
+            case 2:
+                urlogin();
+                break;
+            case 3:
+                printf("\nReturning to main menu...\n");
+                break;
+            case 4:
+                printf("\nExiting the program. Thank you!\n");
+                exit(0);
+            default:
+                printf("\nInvalid choice! Please try again.\n");
+        }
+    } while (ch != 4);
+
     return 0;
 }
+
+
 void urlogin(){
     char a[30],b[30], pass[60];
      printf("enter your first name");
@@ -51,4 +60,16 @@ void urlogin(){
      scanf("%s",b);
      printf("enter your password");
      scanf("%s",pass);
+}
+
+void cr_account() {
+    char fname[30], lname[30], pass[60];
+    printf("\nEnter your first name: ");
+    scanf("%s", fname);
+    printf("Enter your last name: ");
+    scanf("%s", lname);
+    printf("Set a password: ");
+    scanf("%s", pass);
+
+    printf("\nAccount successfully created for %s %s!\n", fname, lname);
 }
